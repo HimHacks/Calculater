@@ -1,80 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculator</title>
 <style>
   body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e6fff5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #202124;
+    color: #e8eaed;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
   }
   h1 {
-    color: #333;
-    text-shadow: 2px 2px 4px #00000050;
+    color: #1a73e8;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   }
   .calculator {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px 0px #00000040;
-    margin-top: 20px;
-    animation: pop-in 0.5s ease-out forwards;
+    background-color: #303134;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 360px;
+    text-align: center;
   }
   .result-screen {
-    background-color: #f2f2f2;
+    background-color: #3c4043;
     border: none;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 36px;
+    padding: 20px;
     margin-bottom: 20px;
-    width: 300px;
-    height: 50px;
+    width: 100%;
     text-align: right;
-    font-size: 24px;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.5);
   }
   .button {
-    padding: 10px 20px;
+    padding: 20px;
     margin: 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.1s;
+    font-size: 18px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
   }
   .button:hover {
-    transform: scale(1.1);
+    background-color: #1a73e8;
+  }
+  .button:active {
+    transform: scale(0.95);
   }
   .number-button {
-    background-color: #e7e7e7;
+    background-color: #5f6368;
+    color: #e8eaed;
   }
   .operation-button {
-    background-color: #fe9241;
+    background-color: #1a73e8;
     color: white;
   }
   .equals-button {
-    background-color: #28a745;
+    background-color: #34a853;
     color: white;
-  }
-  .button:active {
-    transform: scale(0.98);
-  }
-  @keyframes pop-in {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
+    width: calc(100% - 10px);
+    margin-left: 5px;
   }
 </style>
 <script>
 function addNumber(number) {
     var resultScreen = document.getElementById('result');
-    if(resultScreen.value === '0') {
+    if (resultScreen.value === '0') {
         resultScreen.value = number;
     } else {
         resultScreen.value += number;
@@ -98,10 +96,8 @@ function clearScreen() {
 </script>
 </head>
 <body>
-  <h1>Calculator</h1>
-  <h3>Made by Himanshu</h3>
   <div class="calculator">
-    <input type="text" class="result-screen" id="result" placeholder="0" readonly>
+    <input type="text" class="result-screen" id="result" value="0" readonly>
     <div>
       <button class="button number-button" onclick="addNumber('7')">7</button>
       <button class="button number-button" onclick="addNumber('8')">8</button>
@@ -130,8 +126,5 @@ function clearScreen() {
       <button class="button equals-button" onclick="calculate()">=</button>
     </div>
   </div>
-  <p>This Calculater is Made By Himanshu Bishnoi from class 7B in Lucky International School.</p>
-  <h5>Just for Educational Purpose<br>.............................................................<br>
-  &copy 2024 Calculater. All rights reserved</h5>
 </body>
 </html>
